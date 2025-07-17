@@ -1,1 +1,23 @@
+name: Auto Deploy Energi
 
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Instalar dependencias
+        run: npm install
+      - name: Build del sitio
+        run: npm run build
+      - name: Commit y push automático
+        run: |
+          git config user.name "Energi Bot"
+          git config user.email "energi-bot@energi.com"
+          git add .
+          git commit -m "Actualización automática desde GPT" || echo "Sin cambios"
+          git push
