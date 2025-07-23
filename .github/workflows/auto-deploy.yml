@@ -25,7 +25,7 @@ jobs:
 
       - name: Auto commit and push
         run: |
-          git config --global user.email "chatgpt@energi.ai"
+          git config --global user.email "bot@energi.com"
           git config --global user.name "Energi Bot"
           git add .
           git commit -m "Auto update by bot — v.2507222215" || echo "No changes to commit"
