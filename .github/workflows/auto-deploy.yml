@@ -28,7 +28,7 @@ jobs:
           git config --global user.email "chatgpt@energi.ai"
           git config --global user.name "Energi Bot"
           git add .
-          git commit -m "Auto update by bot — v.2507222001"
-          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/adenauj-energi/energi-site.git HEAD:main
+          git commit -m "Auto update by bot — v.2507222215" || echo "No changes to commit"
+          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/adenauj-energi/energi-site.git HEAD:main
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
